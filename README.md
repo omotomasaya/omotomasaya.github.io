@@ -2,7 +2,7 @@
 twitterのクローンアプリです。
 
 <h1>デモ</h1>
-https://user-images.githubusercontent.com/78944548/107743584-7dc9f500-6d54-11eb-8e11-d432c0e305cf.gif
+https://user-images.githubusercontent.com/78944548/107743683-a9e57600-6d54-11eb-84f5-1c2122e094ec.gif
 
 <h1>機能概要</h1>
 ・ログイン、新規登録
