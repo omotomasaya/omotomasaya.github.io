@@ -4,7 +4,8 @@ twitterのクローンアプリです。
 <h1>デモ</h1>
 <img src="https://user-images.githubusercontent.com/78944548/107743683-a9e57600-6d54-11eb-84f5-1c2122e094ec.gif">
 <img src="https://user-images.githubusercontent.com/78944548/107744681-7b689a80-6d56-11eb-868e-278bafe4a8f1.gif">
-
+<img src="https://user-images.githubusercontent.com/78944548/107747943-a1446e00-6d5b-11eb-8a6a-3abc11212c0a.png">
+<img src="">
 <h1>機能概要</h1>
 ・ログイン、新規登録
 ・投稿（画像も可）、投稿削除
