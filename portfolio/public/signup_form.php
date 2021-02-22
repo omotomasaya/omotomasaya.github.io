@@ -9,19 +9,13 @@ if(isset($_POST['signup'])){
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-
-  $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-
-  $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-  $stmt->execute();
-  $member = $stmt->fetch(PDO::FETCH_ASSOC);
-
   if(empty($username) or empty($password) or empty($email)){
     $error = '空欄があります';
   }else{
     $username = $getFromU->checkInput($username);
     $email = $getFromU->checkInput($email);
     $password = $getFromU->checkInput($password);
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
       $error = 'メールアドレスの形式が不正です。';
     }else if(strlen($username) > 20){
@@ -29,7 +23,8 @@ if(isset($_POST['signup'])){
     }else if(strlen($password) < 4){
       $error = 'パスワードは4文字以上で入力いてください';
     }else{
-      if($getFromU->checkEmail($email) === $email){
+      $member = $getFromU->checkEmail($email);
+      if($member['email'] === $email){
         $error = '同じメールアドレスが存在します。';
       }else{
         $getFromU->register($username, $email, $hash);

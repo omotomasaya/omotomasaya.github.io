@@ -15,9 +15,7 @@ class User {
   }
 
   public function register($username, $email, $hash){
-    $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users(username, email, password, profileImage) VALUES (:username, :email, :password, 'assets/images/icon.png')";
-    $stmt = $this->pdo->prepare($sql);
+    $stmt = $this->pdo->prepare("INSERT INTO users(username, email, password, profileImage) VALUES (:username, :email, :password, 'assets/images/icon.png')");
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->bindValue(':password', $hash, PDO::PARAM_STR);

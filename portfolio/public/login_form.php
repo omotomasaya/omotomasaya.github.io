@@ -10,15 +10,19 @@ if(isset($_POST['login'])){
   if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     $error = "ログインに失敗しました";
   }else{
-    $result = $getFromU->checkEmail($email);
-
-    if(password_verify($password, $result['password'])){
-      $_SESSION['user_id'] = $result['user_id'];
-      header('Location: ../home.php');
-      exit();
+    $member = $getFromU->checkEmail($email);
+    if(isset($member['email'])){
+      if(password_verify($password, $member['password'])){
+        $_SESSION['user_id'] = $member['user_id'];
+        header('Location: ../home.php');
+        exit();
+      }else{
+        $error = "ログインに失敗しました";
+      }
     }else{
       $error = "ログインに失敗しました";
     }
+    
   }
 }
 
