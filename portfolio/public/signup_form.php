@@ -16,6 +16,7 @@ if(isset($_POST['signup'])){
     $email = $getFromU->checkInput($email);
     $password = $getFromU->checkInput($password);
     $hash = password_hash($password, PASSWORD_DEFAULT);
+
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
       $error = 'メールアドレスの形式が不正です。';
     }else if(strlen($username) > 20){
@@ -24,6 +25,7 @@ if(isset($_POST['signup'])){
       $error = 'パスワードは4文字以上で入力いてください';
     }else{
       $member = $getFromU->checkEmail($email);
+      
       if($member['email'] === $email){
         $error = '同じメールアドレスが存在します。';
       }else{
