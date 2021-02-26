@@ -1,8 +1,6 @@
 <?php
-
   $user = 'root';
   $pass = 'root';
-
   $dsn = "mysql:host=localhost;dbname=twitterclone;charset=utf8mb4";
 
   try {
