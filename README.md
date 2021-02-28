@@ -26,6 +26,9 @@ mamp 6.0.1で開発しました。
 
 <h1>デプロイ</h1>
 https://twitterclone0701.herokuapp.com
+こちらでログインできます。
+メールアドレス：test@test.com
+パスワード   ：test
 
 <h1>今後追加したいこと</h1>
 ・いいね機能
