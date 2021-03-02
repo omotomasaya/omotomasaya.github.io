@@ -27,7 +27,9 @@ mamp 6.0.1で開発しました。
 <h1>デプロイ</h1>
 
 https://twitterclone0701.herokuapp.com
-
+<br>メール：test@test.com
+<br>パスワード：test
+<br>Herokuなので一定時間経つと画像消えてしまいます。時間がある時にAWSS3を使って画像を保存できるようにします。
 
 <h1>今後追加したいこと</h1>
 ・いいね機能
